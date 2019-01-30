@@ -1,0 +1,8 @@
+[package]
+name = "Rusnaket"
+version = "0.1.0"
+authors = ["SakiiR SakiiR <sakiirlessons@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+piston_window = "0.81.0"
