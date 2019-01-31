@@ -12,7 +12,11 @@ use game::Game;
 use crate::constants::{
     BLOCK_SIZE, HORIZONTAL_BLOCKS_COUNT, VERTICAL_BLOCKS_COUNT, WINDOW_HEIGHT, WINDOW_WIDTH,
 };
+
 use crate::graphics::transform_coord_32;
+
+use piston_window::types::Color;
+const WHITE: Color = [0.204, 0.286, 0.369, 1.0];
 
 use piston_window::*;
 
@@ -38,6 +42,7 @@ fn main() {
 
     while let Some(event) = window.next() {
         window.draw_2d(&event, |context, graphics| {
+            clear(WHITE, graphics);
             game.draw(&context, graphics);
         });
 

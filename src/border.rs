@@ -2,7 +2,7 @@ use piston_window::*;
 use rand::prelude::*;
 
 use crate::block::Block;
-use crate::constants::{Color, RawColor, HORIZONTAL_BLOCKS_COUNT, VERTICAL_BLOCKS_COUNT};
+use crate::constants::{Color, HORIZONTAL_BLOCKS_COUNT, VERTICAL_BLOCKS_COUNT};
 use crate::graphics::draw_block;
 
 fn create_block(x: i32, y: i32) -> Block {
@@ -50,8 +50,7 @@ impl Border {
         let mut rng = rand::thread_rng();
 
         for block in self.blocks.iter_mut() {
-            let color: RawColor = [rng.gen(); 4];
-            (*block).color = color;
+            (*block).color = [rng.gen(), rng.gen(), rng.gen(), 1.0];
         }
     }
 }
