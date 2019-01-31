@@ -1,2 +1,9 @@
 # Rusnaket
-A game of Snake in Rust :p
+
+A game of Snake in Rust :þ
+
+## Run
+
+```sh
+$ cargo run
+```
