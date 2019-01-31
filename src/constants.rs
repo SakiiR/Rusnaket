@@ -1,6 +1,6 @@
 // Window size
-pub const WINDOW_WIDTH: i32 = 200;
-pub const WINDOW_HEIGHT: i32 = 200;
+pub const WINDOW_WIDTH: i32 = 250;
+pub const WINDOW_HEIGHT: i32 = 250;
 
 // Block size in pixel
 pub const BLOCK_SIZE: i32 = 5;
