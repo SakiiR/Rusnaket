@@ -7,3 +7,7 @@ A game of Snake in Rust :þ
 ```sh
 $ cargo run
 ```
+
+## Screenshot
+
+![screenshot](./screenshot.png)
