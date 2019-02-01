@@ -11,7 +11,10 @@ use piston_window::*;
 use rand::prelude::*;
 use texture::TextureSettings;
 
-use crate::constants::{Color, HORIZONTAL_BLOCKS_COUNT, INITIAL_GAME_SPEED, VERTICAL_BLOCKS_COUNT};
+use crate::constants::{
+    Color, HORIZONTAL_BLOCKS_COUNT, HORIZONTAL_LIMIT, INITIAL_GAME_SPEED, VERTICAL_BLOCKS_COUNT,
+    VERTICAL_LIMIT,
+};
 
 pub struct Game {
     snake: Snake,
@@ -125,14 +128,14 @@ impl Game {
         let head: Block = self.snake.get_head();
 
         match head.x {
-            0 => return true,
-            HORIZONTAL_BLOCKS_COUNT => return true,
+            1 => return true,
+            HORIZONTAL_LIMIT => return true,
             _ => false,
         };
 
         match head.y {
-            0 => return true,
-            VERTICAL_BLOCKS_COUNT => return true,
+            1 => return true,
+            VERTICAL_LIMIT => return true,
             _ => false,
         };
 
