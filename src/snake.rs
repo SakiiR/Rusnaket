@@ -30,12 +30,46 @@ pub struct Snake {
 }
 
 impl Snake {
+    pub fn get_head(&self) -> Block {
+        self.head
+    }
+
     pub fn get_direction(&self) -> Direction {
         self.direction
     }
 
     pub fn set_direction(&mut self, direction: Direction) {
         self.direction = direction;
+    }
+
+    fn grow(&mut self) {
+        self.body.push(Block::new(0, 0, Color::value(Color::Snake)));
+    }
+
+    pub fn is_eating_food(&mut self, food: &mut Vec<Block>) -> bool {
+        let head: Block = self.get_head();
+
+        for (i, block) in food.iter().enumerate() {
+            if block == &head {
+                food.remove(i);
+                self.grow();
+                return true;
+            }
+        }
+
+        false
+    }
+
+    pub fn is_eating_itself(&self) -> bool {
+        let head: Block = self.get_head();
+
+        for block in self.body.iter() {
+            if block == &head {
+                return true;
+            }
+        }
+
+        false
     }
 
     pub fn new() -> Snake {
@@ -55,7 +89,7 @@ impl Snake {
         Snake {
             body: body,
             head: Block::new(
-                (HORIZONTAL_BLOCKS_COUNT / 2) + (SNAKE_INITIAL_SIZE / 2),
+                (HORIZONTAL_BLOCKS_COUNT / 2) + (SNAKE_INITIAL_SIZE / 2) + 1,
                 VERTICAL_BLOCKS_COUNT / 2,
                 Color::value(Color::SnakeHead),
             ),
