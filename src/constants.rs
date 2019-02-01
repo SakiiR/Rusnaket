@@ -1,11 +1,11 @@
 use piston_window::types::Color as PColor;
 
 // Window size
-pub const WINDOW_WIDTH: i32 = 800;
-pub const WINDOW_HEIGHT: i32 = 800;
+pub const WINDOW_WIDTH: i32 = 200;
+pub const WINDOW_HEIGHT: i32 = 200;
 
 // Block size in pixel
-pub const BLOCK_SIZE: i32 = 20;
+pub const BLOCK_SIZE: i32 = 5;
 
 // Number of blocks per side
 pub const HORIZONTAL_BLOCKS_COUNT: i32 = WINDOW_WIDTH / BLOCK_SIZE;
@@ -17,7 +17,8 @@ pub const BACKGROUND_COLOR: PColor = [0.108, 0.152, 0.527, 1.0];
 // The Snake initial size
 pub const SNAKE_INITIAL_SIZE: i32 = 10;
 
-pub const GAME_SPEED: f64 = 0.1;
+// The initial game speed
+pub const INITIAL_GAME_SPEED: f64 = 0.2;
 
 pub enum Color {
     Snake,

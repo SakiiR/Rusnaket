@@ -12,3 +12,9 @@ impl Block {
         Block { x, y, color }
     }
 }
+
+impl PartialEq for Block {
+    fn eq(&self, other: &Block) -> bool {
+        self.x == other.x && self.y == other.y
+    }
+}

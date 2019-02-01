@@ -6,4 +6,6 @@ edition = "2018"
 
 [dependencies]
 piston_window = "0.81.0"
+gfx_device_gl = "*"
 rand = "0.6.5"
+find_folder = "*"

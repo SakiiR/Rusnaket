@@ -40,7 +40,7 @@ fn main() {
     .build()
     .unwrap();
 
-    let mut game: Game = Game::new();
+    let mut game: Game = Game::new(window.factory.clone());
 
     // Event loop
     while let Some(event) = window.next() {
