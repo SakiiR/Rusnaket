@@ -69,16 +69,16 @@ impl Game {
     }
 
     fn draw_game_over(&self, ctx: &Context, g2d: &mut G2d) {
-        let assets = Search::ParentsThenKids(3, 3).for_folder("assets").unwrap();
+        // let assets = Search::ParentsThenKids(3, 3).for_folder("assets").unwrap();
 
-        let ref font = assets.join("monofur.ttf");
-        let mut glyphs = Glyphs::new(font, self.factory.clone(), TextureSettings::new()).unwrap();
+        // let ref font = assets.join("monofur.ttf");
 
-        let transform = ctx.transform.trans(2.0, 50.0);
+        // let mut glyphs = Glyphs::new(font, self.factory.clone(), TextureSettings::new()).unwrap();
+        // let transform = ctx.transform.trans(2.0, 50.0);
 
-        text::Text::new_color([1.0, 0.0, 0.0, 1.0], 15)
-            .draw("Game Over!", &mut glyphs, &ctx.draw_state, transform, g2d)
-            .unwrap();
+        // text::Text::new_color([1.0, 0.0, 0.0, 1.0], 15)
+        //     .draw("Game Over!", &mut glyphs, &ctx.draw_state, transform, g2d)
+        //     .unwrap();
     }
 
     pub fn draw(&self, ctx: &Context, g2d: &mut G2d) {

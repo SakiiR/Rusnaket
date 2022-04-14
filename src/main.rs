@@ -45,7 +45,7 @@ fn main() {
     // Event loop
     while let Some(event) = window.next() {
         // When piston is ready to draw
-        window.draw_2d(&event, |context, graphics| {
+        window.draw_2d(&event, |context, graphics, _| {
             clear(BACKGROUND_COLOR, graphics);
             game.draw(&context, graphics);
         });
